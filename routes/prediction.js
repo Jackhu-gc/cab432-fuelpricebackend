@@ -28,6 +28,9 @@ router.get('/', function(req, res, next) {
     else {
       res.status(200).json({
         siteid: params.Filters.item_id,
+        lat: req.query.lat,
+        lng: req.query.lng,
+        address: req.query.address,
         date: data.Forecast.Predictions.p50[0].Timestamp.substring(0, 10),
         price: data.Forecast.Predictions.p50[0].Value
       })

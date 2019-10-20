@@ -49,11 +49,11 @@ router.get("/sites", function(req, res, next) {
             //   console.log();
             // }
 
-            // redisClient.setex(
-            //   redisKey,
-            //   3600,
-            //   // JSON.stringify({ ...resultJSON }),
-            // );
+            redisClient.setex(
+              redisKey,
+              3600,
+              JSON.stringify({ ...resultJSON }),
+            );
             return res.status(200).json(resultJSON);
           } else {
             return res
