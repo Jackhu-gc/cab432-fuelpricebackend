@@ -27,6 +27,7 @@ router.get('/', function(req, res, next) {
     if(err) console.log(err, err.stack);
     else {
       res.status(200).json({
+        siteid: params.Filters.item_id,
         date: data.Forecast.Predictions.p50[0].Timestamp.substring(0, 10),
         price: data.Forecast.Predictions.p50[0].Value
       })
